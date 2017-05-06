@@ -12,5 +12,9 @@
 */
 
 $app->get('/', function () use ($app) {
-    return $app->version();
+    return response()->json(['a' => 100, 'b' => 'abc']);
 });
+
+$app->get('/students',['uses' => 'StudentController@getStudents']);
+
+$app->post('/student', ['uses' => 'StudentController@addStudent']);
